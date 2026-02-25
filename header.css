@@ -1,0 +1,95 @@
+/* HEADER */
+header{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:2px 50px;
+    background:rgba(0,0,0,0.45);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.2);
+    z-index:100000;
+    animation: slideDown 9s alternate;
+}
+
+@keyframes slideDown{
+    0%{
+        top: -120px;
+    }
+100%{
+    top: 0;
+}
+}
+
+.logo img{
+    width:55px;
+    filter: drop-shadow(0 0 10px orange);
+}
+
+/* NAV */
+nav{
+    display:flex;
+    gap:30px;
+    align-items: center;
+}
+
+nav a{
+    position:relative;
+    text-decoration:none;
+    color:#ffa500;
+    font-size:18px;
+    transition:0.3s;
+}
+
+/* underline animation */
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:orange;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+nav a:hover{
+    color:white;
+    text-shadow:0 0 10px orange,0 0 25px orange;
+}
+
+/* CONTACT BUTTON */
+nav .con{
+    padding:6px 18px;
+    border-radius:25px;
+    background:linear-gradient(135deg,orange,red);
+    color:white;
+    /* box-shadow:0 0 10px orange; */
+}
+
+nav .con::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0%;
+    height:2px;
+    /* background:orange; */
+    /* transition:0.3s; */
+}
+
+nav .con:hover::after{
+    width:0%;
+}
+
+nav .con:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 20px 8px orange;
+}

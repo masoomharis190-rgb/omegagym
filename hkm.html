@@ -1,0 +1,131 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    /* background:#111; */
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
+
+<body>
+
+  <form id="myform">
+
+    <input type="text" id="title-text">
+    <br><br><br>
+    <input type="text" id="body-text">
+    <br><br><br>
+    <textarea name="text" id="userId"></textarea>
+    <br><br><br>
+    <button type="submit" id="save-form">Send Message</button>
+
+  </form>
+
+
+  <script>
+
+    document.getElementById("save-form").addEventListener("click", function (e) {
+      e.preventDefault();
+
+  
+
+    // var obj =
+    // {
+    //   title: document.getElementById("title-text").value,
+    //   body: document.getElementById("body-text").value,
+    //   userId: document.getElementById("userId").value,
+    // };
+
+    fetch('https://formspree.io/f/mnjbqaqj', {
+      method: 'POST',
+      body: new FormData(document.getElementById("myform")),
+      headers: {
+        'Content-type': 'application/json; x-www-form-urlencoded',
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+
+        });
+  </script>
+
+</body>
+
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formspree Form</title>
+
+<style>
+body{
+  font-family: Arial;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+</style>
+
+</head>
+
+<body>
+
+<form id="myform">
+
+<input type="text" name="title" id="title-text" placeholder="Title">
+<br><br>
+
+<input type="text" name="body" id="body-text" placeholder="Body">
+<br><br>
+
+<textarea name="userId" id="userId" placeholder="User ID"></textarea>
+<br><br>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+
+<script>
+
+document.getElementById("myform").addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  fetch('https://formspree.io/f/mnjbqaqj', {
+    method:'POST',
+    body:new FormData(this)
+  })
+  .then(response => {
+      if(response.ok){
+        alert("Form Successfully Sent ✅");
+      } else {
+        alert("Error sending form ❌");
+      }
+  });
+
+});
+
+</script>
+
+</body>
+</html>

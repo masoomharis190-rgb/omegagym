@@ -1,0 +1,55 @@
+#services {
+    padding: 80px 8%;
+    background: rgb(0, 0, 0);
+    text-align: center;
+    position: relative;
+            top: 0;
+            z-index: 100;
+}
+
+
+
+#services .heading {
+    margin-bottom: 60px;
+    font-size: 50px;
+
+}
+
+.services-container {
+    perspective: 500px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-box {
+    transform: rotateY(5deg);
+    background: #1f1f1f;
+    padding: 40px 30px;
+    border-radius: 10px;
+    transition: 0.4s;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid orange;
+}
+
+.service-box i {
+    font-size: 50px;
+    color: orange;
+    margin-bottom: 20px;
+}
+
+.service-box h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.service-box p {
+    color: rgba(255, 255, 255, 0.466);
+    line-height: 1.6;
+}

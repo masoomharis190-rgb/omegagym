@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+
+</head>
+<style>
+
+
+
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior:smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+            color: white;
+                        background: linear-gradient(135deg, rgba(255, 166, 0, 0.811), black, #020024f4, #000);
+display: flex;
+align-items: center;
+justify-content: center;
+            cursor: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: linear-gradient(135deg, rgba(255, 166, 0, 0.811), black, #020024f4, #000);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, black, orange);
+            border-radius: 2px;
+        }
+
+.time{
+    width: 100vw;
+    height: 100vh;
+    /* background: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    position: relative;
+            top: 0;
+            z-index: 100;
+}
+
+.center{
+    width: 350px;
+    height: 410px;
+    background: linear-gradient(145deg,#111,#1f1f1f);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px orange;
+}
+
+.center h3{
+    text-align: center;
+    color: orange;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.time p{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dashed #333;
+    color: #fff;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.time p:hover{
+    color: orange;
+    transform: translateX(5px);
+}
+
+.day{
+            -webkit-text-stroke: 1px white;
+color: orange;
+    font-weight: 600;
+}
+
+.hour{
+    font-weight: 600;
+
+    color: white;
+}
+
+.off .hour{
+    color:red;
+    font-weight: 600;
+
+}
+
+       
+
+@media (max-width: 480px){
+   .location{
+    flex-wrap: wrap;
+   }
+.loc{
+    width: 400px;
+}
+    .center{
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .center h3{
+        font-size: 20px;
+    }
+
+    .time p{
+        font-size: 15px;
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 360px){
+    .center{
+        padding: 15px;
+    }
+
+    .center h3{
+        font-size: 18px;
+    }
+
+    .time p{
+        font-size: 14px;
+    }
+}
+
+
+          .cursor {
+            width: 40px;
+            height: 40px;
+            border: 2px solid orange;
+            border-radius: 50%;
+            position: fixed;
+            z-index: 100000000000000000;
+            pointer-events: none;
+            transition: 0.15s ease-out;
+            box-shadow: 0 0 20px orange;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: orange;
+            border-radius: 50%;
+            position: fixed;
+            z-index: 100000000000000000;
+            pointer-events: none;
+
+        }
+            a {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    background: red;
+    color: white;
+    position: absolute;
+    top: 100px;
+    z-index: 10000;
+    right: 20px;
+}
+
+#i {
+    position: relative;
+    top: 7px;
+}
+</style>
+<body>
+     <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+     <a href="../Gym.html"><i id="i" class="fa-solid fa-x"></i>
+        </a>
+
+        
+        <div class="time">
+            <div class="center">
+                <h3>Working Hours</h3>
+
+                <p><span class="day">Monday</span> <span class="hour"> 9 am–11:30 pm</span></p>
+                <p><span class="day">Tuesday</span> <span class="hour">9 am–11:30 pm</span></p>
+                <p><span class="day">Wednesday</span> <span class="hour">9 am–11:30 pm</span></p>
+                <p><span class="day">Thursday</span> <span class="hour">9 am–11:30 pm</span></p>
+                <p class="off"><span class="day">Friday</span> <span class="hour">Closed</span></p>
+                <p><span class="day">Saturday</span> <span class="hour">9 am–11:30 pm</span></p>
+                <p><span class="day">Sunday</span> <span class="hour">9 am–11:30 pm</span></p>
+            </div>
+        </div>
+
+    
+</body>
+
+<script>
+      const cursor = document.querySelector(".cursor");
+    const dot = document.querySelector(".cursor-dot");
+
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX - 20 + "px";
+        cursor.style.top = e.clientY - 20 + "px";
+
+        dot.style.left = e.clientX - 4 + "px";
+        dot.style.top = e.clientY - 4 + "px";
+    });
+
+    // Click effect
+    document.addEventListener("click", () => {
+        cursor.style.transform = "scale(1.6)";
+        setTimeout(() => {
+            cursor.style.transform = "scale(1)";
+        }, 150);
+    });
+</script>
+</html>

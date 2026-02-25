@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../all.css">
+    <link rel="stylesheet" href="../teem.css">
+    <link rel="stylesheet" href="../timing.css">
+    <link rel="stylesheet" href="../contact.css">
+
+
+<style>
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior:smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+            color: white;
+            cursor: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: linear-gradient(135deg, rgba(255, 166, 0, 0.811), black, #020024f4, #000);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, black, orange);
+            border-radius: 2px;
+        }
+
+  span {
+        color: orange;
+        -webkit-text-stroke: 1px white;
+
+    }
+
+    #team h2{
+        font-size: 50px;
+        margin-top: 70px;
+        margin-bottom: 200px;
+    }
+
+    
+
+  .cursorr {
+            width: 40px;
+            height: 40px;
+            border: 2px solid orange;
+            border-radius: 50%;
+            position: fixed;
+            z-index: 100000000000000000;
+            pointer-events: none;
+            transition: 0.15s ease-out;
+            box-shadow: 0 0 20px orange;
+        }
+
+        .cursor-ddot {
+            width: 8px;
+            height: 8px;
+            background: orange;
+            border-radius: 50%;
+            position: fixed;
+            z-index: 100000000000000000;
+            pointer-events: none;
+        }
+
+
+
+        
+        @media (max-width: 412px) {
+            nav.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #000;
+                padding: 20px;
+            }
+
+
+        }
+
+
+        .location {
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            position: fixed;
+            z-index: 100000;
+            align-items: center;
+            justify-content: space-around;
+            background: #000000ad;
+            backdrop-filter: blur(3px);
+            top: 0;
+            left: 0;
+        }
+
+        .location.active {
+            display: flex;
+        }
+
+        .location a {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            border-radius: 5px;
+            background: red;
+            color: white;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+        }
+
+        .location #i {
+            position: relative;
+            top: 7px;
+        }
+
+        .location .loc {
+            width: 500px;
+            height: 400px;
+            background: #fff;
+        }
+
+
+        #menuBtn {
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            display: none;
+        }
+
+
+        @media (max-width: 412px) {
+
+            #menuBtn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+
+            nav.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #000;
+                padding: 20px;
+                gap: 15px;
+                animation: slideDown .3s ease;
+            }
+
+            nav a {
+                font-size: 18px;
+                padding: 10px 0;
+                border-bottom: 1px solid #222;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cursor {
+            width: 40px;
+            height: 40px;
+            border: 2px solid orange;
+            border-radius: 50%;
+            position: fixed;
+            z-index: 100000000000000000;
+            pointer-events: none;
+            transition: 0.15s ease-out;
+            box-shadow: 0 0 20px orange;
+        }
+
+
+</style>
+<body>
+    
+    <div class="cursorr"></div>
+    <div class="cursor-ddot"></div>
+<!-- 
+    <div id="loader">
+        <div class="spinner"></div>
+    </div> -->
+
+
+    <div> <a class="what" href="https://wa.me/ 0312 3399370?text=Welcome!%20To%20Omega Fitness Club%20Chats"
+            target="_blank"></a></div>
+
+    <header>
+        <div class="logo">
+            <img src="../logo1.png" alt="">
+        </div>
+
+        <i class="fa-solid fa-bars" id="menuBtn"></i>
+
+
+        <nav id="nav">
+            <a id="hjj"  href="../Gym.html">Home</a>
+            <a id="hj"  href="../Gym.html">About</a>
+            <a href="allservice.html">Service</a>
+            <a href="#" id="location">location</a>
+             <a href="fees.html">Fees</a>
+            <a href="timing.html">Timing</a>
+            <a href="#team">Team</a>
+            <a class="con" href="jion.html">Contact</a>
+        </nav>
+    </header>
+
+      <section id="team">
+        <h2 class="heading">Expert <span>Trainers</span></h2>
+
+        <div class="team-container">
+            <div class="team-box">
+                <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?q=80&w=1374&auto=format&fit=crop"
+                    alt="Trainer 1">
+                <div class="team-info">
+                    <h4>ZAMIN BRO</h4>
+                    <p>Muscle Expert</p>
+                </div>
+            </div>
+
+            <div class="team-box">
+                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=1374&auto=format&fit=crop"
+                    alt="Trainer 2">
+                <div class="team-info">
+                    <h4>HARIS kHAN</h4>
+                    <p>Cardio Specialist</p>
+                </div>
+            </div>
+
+            <div class="team-box">
+                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=1374&auto=format&fit=crop"
+                    alt="Trainer 3">
+                <div class="team-info">
+                    <h4>SHAZAIB BRO</h4>
+                    <p>Crossfit Coach</p>
+                </div>
+            </div>
+
+             <div class="team-box">
+                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=1374&auto=format&fit=crop"
+                    alt="Trainer 3">
+                <div class="team-info">
+                    <h4>SHAZAIB BRO</h4>
+                    <p>Crossfit Coach</p>
+                </div>
+            </div>
+
+
+             <div class="team-box">
+                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=1374&auto=format&fit=crop"
+                    alt="Trainer 3">
+                <div class="team-info">
+                    <h4>SHAZAIB BRO</h4>
+                    <p>Crossfit Coach</p>
+                </div>
+            </div>
+
+
+             <div class="team-box">
+                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=1374&auto=format&fit=crop"
+                    alt="Trainer 3">
+                <div class="team-info">
+                    <h4>SHAZAIB BRO</h4>
+                    <p>Crossfit Coach</p>
+                </div>
+            </div>
+
+
+             <div class="team-box">
+                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=1374&auto=format&fit=crop"
+                    alt="Trainer 3">
+                <div class="team-info">
+                    <h4>SHAZAIB BRO</h4>
+                    <p>Crossfit Coach</p>
+                </div>
+            </div>
+
+
+             <div class="team-box">
+                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=1374&auto=format&fit=crop"
+                    alt="Trainer 3">
+                <div class="team-info">
+                    <h4>SHAZAIB BRO</h4>
+                    <p>Crossfit Coach</p>
+                </div>
+            </div>
+
+
+             <div class="team-box">
+                <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=1374&auto=format&fit=crop"
+                    alt="Trainer 3">
+                <div class="team-info">
+                    <h4>SHAZAIB BRO</h4>
+                    <p>Crossfit Coach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <footer id="contact">
+        <div class="footer-grid" id="cont">
+            <div class="footer-col">
+                <h3>Omega<span>Fitness</span></h3>
+                <p>The best place to build your body and mind. Join us today and start your journey.</p>
+                <div class="soocial">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <a href="../Gym.html" >Home</a>
+                <a href="../Gym.html">About Us</a>
+                <a href="allservice.html">Services</a>
+                <a href="#" id="location">location</a>
+                     <a href="fees.html">Fees</a>
+            <a href="timing.html">Timing</a>
+                <a href="#team"  id="location">Our Team</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p class="pl"><i class="fa-solid fa-location-dot"></i> City, Hirabad, Near Mira School, Gate, Hyderabad,
+                    71000</p>
+                <p><i class="fa-solid fa-phone"></i> 0312 3399370</p>
+                <p><i class="fa-solid fa-envelope"></i> info@omegafitness.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 Omega Fitness. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+   <div class="location" id="mapModal">
+        <a href=""> <i id="i" class="fa-solid fa-x"></i>
+        </a>
+        <div class="time">
+            <div class="center">
+                <h3>Working Hours</h3>
+
+                <p><span class="day">Monday</span> <span class="hour"> 9 am–11:30 pm</span></p>
+                <p><span class="day">Tuesday</span> <span class="hour">9 am–11:30 pm</span></p>
+                <p><span class="day">Wednesday</span> <span class="hour">9 am–11:30 pm</span></p>
+                <p><span class="day">Thursday</span> <span class="hour">9 am–11:30 pm</span></p>
+                <p class="off"><span class="day">Friday</span> <span class="hour">Closed</span></p>
+                <p><span class="day">Saturday</span> <span class="hour">9 am–11:30 pm</span></p>
+                <p><span class="day">Sunday</span> <span class="hour">9 am–11:30 pm</span></p>
+            </div>
+        </div>
+
+        <div class="loc">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2965.7342749357567!2d68.3682096!3d25.407145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x394c713f642a3f53%3A0x20c40c01618200ab!2sOmega%20Fitness%20Club!5e1!3m2!1sen!2s!4v1769868093773!5m2!1sen!2s"
+                width="100%" height="100%" style="border:0;" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+const hj = document.getElementById("hj");
+const hjj = document.getElementById("hjj");
+
+menuBtn.addEventListener("click", () => {
+    nav.classList.toggle("active");
+
+    // icon change
+    menuBtn.classList.toggle("fa-bars");
+    menuBtn.classList.toggle("fa-xmark");
+});
+
+hjj.addEventListener("click", () => {
+    nav.classList.remove("active");   // nav hide
+
+    // icon reset
+    menuBtn.classList.remove("fa-xmark");
+    menuBtn.classList.add("fa-bars");
+});
+
+// hj click -> nav hide
+hj.addEventListener("click", () => {
+    nav.classList.remove("active");   // nav hide
+
+    // icon reset
+    menuBtn.classList.remove("fa-xmark");
+    menuBtn.classList.add("fa-bars");
+});
+
+
+</script>
+
+<script>
+    
+    const cursor = document.querySelector(".cursorr");
+    const dot = document.querySelector(".cursor-ddot");
+
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX - 20 + "px";
+        cursor.style.top = e.clientY - 20 + "px";
+
+        dot.style.left = e.clientX - 4 + "px";
+        dot.style.top = e.clientY - 4 + "px";
+    });
+
+    // Click effect
+    document.addEventListener("click", () => {
+        cursor.style.transform = "scale(1.6)";
+        setTimeout(() => {
+            cursor.style.transform = "scale(1)";
+        }, 150);
+    });
+</script>
+
+<script>
+    
+    // JavaScript for Loader Timing
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            var loader = document.getElementById('loader');
+            loader.style.opacity = '0'; // Smooth hide
+            setTimeout(function () {
+                loader.style.display = 'none'; // Completely remove
+            }, 500); // 0.5s match with transition
+        }, 2000); // 3000ms = 3 seconds
+    });
+
+</script>
+
+
+<script>
+     const locationBtn = document.getElementById("location");
+    const mapModal = document.getElementById("mapModal");
+    const cut = document.getElementById("i");
+
+    locationBtn.addEventListener("click", () => {
+        mapModal.classList.add("active");
+    });
+
+    mapModal.addEventListener("click", (e) => {
+        if (e.target === mapModal) {
+            mapModal.classList.remove("active");
+        }
+    });
+
+    cut.addEventListener("click", () => {
+        mapModal.classList.remove("active");
+    });
+
+</script>
+
+<script src="../java.js"></script>
+</html>
